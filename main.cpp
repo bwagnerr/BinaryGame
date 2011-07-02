@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 
     QmlApplicationViewer viewer;
     viewer.setOrientation(QmlApplicationViewer::ScreenOrientationAuto);
-    viewer.setMainQmlFile(QLatin1String("qml/Binary-Sum-Game/binarysumgame.qml"));
+    viewer.setMainQmlFile(QLatin1String("qml/binarysumgame.qml"));
     viewer.showExpanded();
 
     return app.exec();
