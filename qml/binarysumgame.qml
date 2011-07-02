@@ -5,6 +5,8 @@ Rectangle {
 
     property int random: Math.floor(Math.random() * 255)+1
     property int sum : 0
+    property int wins: 0
+    property int losses: 0
 
     width: 600; height: 405
     color: "#edecec"
@@ -22,6 +24,7 @@ Rectangle {
     onSumChanged: {
         if (sum == random){
             timeanimation.stop()
+            wins++
             blocker.enabled = true
             blockerlabel.text = "You rock!\nNice job!"
             finalmessage.visible = true
@@ -36,6 +39,7 @@ Rectangle {
 
         onValueChanged: {
             if (value == 100){
+                losses++
                 blocker.enabled = true
                 blockerlabel.text = "Boo!\nYou lost..."
                 finalmessage.visible = true
@@ -91,6 +95,14 @@ Rectangle {
                     color: main.sum == main.random ? "black" : "white"
                     text: "\nPress anywhere\nto restart"
                     font.pixelSize: 30
+                }
+                Text{
+                    anchors.right: parent.right
+                    anchors.bottom: parent.bottom
+                    anchors.margins: 20
+                    color: main.sum == main.random ? "black" : "white"
+                    text: "Wins: "+wins+" / Losses:"+losses
+                    font.pixelSize: 20
                 }
             }
         }
