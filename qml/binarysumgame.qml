@@ -15,7 +15,6 @@ Rectangle {
         progressbar.value = 0
         timeanimation.start()
         blocker.enabled = false
-        message.text = "Can you do it?"
         finalmessage.visible = false
 
     }
@@ -53,21 +52,21 @@ Rectangle {
         id: binariesbox
         width: main.width
         anchors.top: scorebox.bottom
-        anchors.bottom: messagebox.top
+        anchors.bottom: parent.bottom
     }
-    Rectangle{
-        id:messagebox
-        width: main.width
-        height: main.height/6
-        anchors.bottom: main.bottom
-        Text{
-            id: message
-            anchors.centerIn: parent
-            text: "Can you do it?"
-            font.bold: true
-            font.pixelSize: 20
-        }
-    }
+//    Rectangle{
+//        id:messagebox
+//        width: main.width
+//        height: main.height/6
+//        anchors.bottom: main.bottom
+//        Text{
+//            id: message
+//            anchors.centerIn: parent
+//            text: "Can you do it?"
+//            font.bold: true
+//            font.pixelSize: 20
+//        }
+//    }
         MouseArea{
             id: blocker
             enabled: false
